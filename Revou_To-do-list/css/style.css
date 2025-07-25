@@ -1,0 +1,207 @@
+:root {
+  --bg-color: #0e0e0e;
+  --container-bg: #1a1a1a;
+  --text-color: #ffd700;
+  --input-bg: #262626;
+  --border-color: #555;
+  --task-bg: #262626;
+  --light-gray: #ccc;
+  --btn-bg: #ffd700;
+  --btn-text: #1a1a1a;
+  --delete-bg: #ff4d4d;
+  --edit-bg: #ffd700;
+}
+
+body.light-mode {
+  --bg-color: #ffffff;
+  --container-bg: #fffef8;
+  --text-color: #b8860b;
+  --input-bg: #f4f4f4;
+  --border-color: #ccc;
+  --task-bg: #fefefe;
+  --light-gray: #666;
+  --btn-bg: #b8860b;
+  --btn-text: #ffffff;
+  --delete-bg: #ff4d4d;
+  --edit-bg: #b8860b;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+.todo-container {
+  background: var(--container-bg);
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.1);
+  width: 100%;
+  max-width: 700px;
+  border: 1px solid var(--border-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+header h1 {
+  color: var(--text-color);
+  font-size: 26px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#toggle-mode {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#task-input, #task-date {
+  background: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+#task-input::placeholder {
+  color: #888;
+}
+
+form button {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+form button:hover {
+  opacity: 0.9;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+#filter-date, #reset-filter {
+  padding: 8px;
+  border-radius: 8px;
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+.no-task {
+  text-align: center;
+  color: var(--light-gray);
+  padding: 20px;
+}
+
+.edit-btn, .delete-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  margin-left: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background: var(--edit-bg);
+  color: var(--btn-text);
+}
+
+.delete-btn {
+  background: var(--delete-bg);
+  color: #fff;
+}
+
+.btn-done {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 6px;
+}
+
+.btn-undone {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 6px;
+}
+
+#delete-all {
+  background-color: var(--delete-bg);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-top: 15px;
+}
+
+#delete-all:hover {
+  opacity: 0.9;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
